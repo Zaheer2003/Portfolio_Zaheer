@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 bg-[#01003D] text-white backdrop-blur border-b border-white/10 font-audiowide">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-3xl tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500">
+        <Link href="/" className="text-3xl tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
           Mohamed Zaheer
         </Link>
         <nav className="hidden md:flex space-x-6 items-center text-lg">

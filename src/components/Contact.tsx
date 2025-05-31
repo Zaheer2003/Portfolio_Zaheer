@@ -140,7 +140,7 @@ ${formData.message}
 
             <button
               onClick={handleClick}
-              className="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-6 py-3 rounded-lg transition-colors duration-300"
+              className="w-full flex items-center justify-center gap-3 cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-6 py-3 rounded-lg transition-colors duration-300"
               type="button"
             >
               <BsWhatsapp className="w-6 h-6" />

@@ -146,14 +146,14 @@ export default function Projects() {
               <div className="mt-auto flex gap-4">
                 {project.github && (
                   <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
-                    <Button variant="outline" className="flex items-center gap-2 text-white border-white hover:bg-white hover:text-[#01003D]">
+                    <Button variant="default" className="flex items-center gap-2 text-white cursor-pointer border-white hover:bg-white hover:text-[#01003D]">
                       <Github className="w-5 h-5" /> GitHub
                     </Button>
                   </a>
                 )}
                 {project.demo && (
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
-                    <Button variant="outline" className="flex items-center gap-2 text-white border-white hover:bg-white hover:text-[#01003D]">
+                    <Button variant="default" className="flex items-center gap-2 cursor-pointer text-white border-white hover:bg-white hover:text-[#01003D]">
                       <ExternalLink className="w-5 h-5" /> Live Demo
                     </Button>
                   </a>

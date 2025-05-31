@@ -106,7 +106,7 @@ export default function Education() {
                     >
                       <Button
                         variant="default"
-                        className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                        className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 cursor-pointer"
                       >
                         Download Certificate <Download className="ml-2 w-4 h-4" />
                       </Button>

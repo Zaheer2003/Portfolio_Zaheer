@@ -65,7 +65,7 @@ export default function Certificates() {
               </div>
               <p className="text-white/60 flex-grow mb-6">{cert.description}</p>
               <a href={cert.file} download target="_blank" rel="noopener noreferrer" className="self-start">
-                <Button variant="default" className="text-white border-white hover:bg-white hover:text-[#01003D]">
+                <Button variant="default" className="text-white border-white hover:bg-white hover:text-[#01003D] cursor-pointer">
                   Download Certificate <Download className="ml-2 w-4 h-4" />
                 </Button>
               </a>

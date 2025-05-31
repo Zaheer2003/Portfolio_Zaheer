@@ -62,7 +62,7 @@ export default function Hero() {
           <a href="/MyCV.pdf" download>
             <Button
               variant="default"
-              className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+              className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 cursor-pointer"
             >
               Download CV <ArrowDownToLine className="ml-2 w-4 h-4" />
             </Button>
@@ -70,7 +70,7 @@ export default function Hero() {
           <Link href="#contact">
             <Button
               variant="default"
-              className="border-white text-white hover:bg-white hover:text-[#01003D] transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-[#01003D] transition-all duration-300 cursor-pointer"
             >
               Contact Me <Mail className="ml-2 w-4 h-4" />
             </Button>

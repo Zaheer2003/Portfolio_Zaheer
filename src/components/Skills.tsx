@@ -43,7 +43,7 @@ export default function Skills() {
   return (
     <section
       className="bg-[#0B0B3B] text-white font-audiowide py-20 px-6 md:px-12 min-h-screen"
-      aria-labelledby="skills-heading"
+      aria-labelledby="skills-heading" id='skills'
     >
       <div className="max-w-6xl mx-auto">
         <h1 id="skills-heading" className="text-center text-4xl md:text-6xl font-bold mb-6">

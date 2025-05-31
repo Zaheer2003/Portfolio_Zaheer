@@ -49,7 +49,7 @@ export default function Certificates() {
   ]
 
   return (
-    <section className="bg-[#01003D] text-white font-audiowide py-20 px-6 md:px-12 min-h-screen">
+    <section className="bg-[#01003D] text-white font-audiowide py-20 px-6 md:px-12 min-h-screen" id='certificates'>
       <div className="max-w-5xl mx-auto">
         <h1 className="text-center text-4xl md:text-6xl font-bold mb-16">Certificates</h1>
 

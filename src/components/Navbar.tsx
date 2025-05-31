@@ -12,12 +12,12 @@ export default function Navbar() {
           Mohamed Zaheer
         </Link>
         <nav className="hidden md:flex space-x-6 items-center text-lg">
-          <NavItem href="/" text="About" />
-          <NavItem href="/" text="Education" />
-          <NavItem href="/" text="Skills" />
-          <NavItem href="/" text="Certificates" />
-          <NavItem href="/" text="Projects" />
-          <NavItem href="/" text="Contacts" />
+          <NavItem href="#about" text="About" />
+          <NavItem href="#education" text="Education" />
+          <NavItem href="#skills" text="Skills" />
+          <NavItem href="#certificates" text="Certificates" />
+          <NavItem href="#projects" text="Projects" />
+          <NavItem href="#contact" text="Contacts" />
         </nav>
         <div className="md:hidden flex items-center gap-2">
           <Sheet>
@@ -28,12 +28,12 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#01003D] text-white">
               <nav className="flex flex-col space-y-5 mt-10 text-lg">
-                <NavItem href="/" text="About" />
-                <NavItem href="/" text="Education" />
-                <NavItem href="/" text="Skills" />
-                <NavItem href="/" text="Certificates" />
-                <NavItem href="/" text="Projects" />
-                <NavItem href="/" text="Contacts" />
+                <NavItem href="about" text="About" />
+                <NavItem href="education" text="Education" />
+                <NavItem href="skills" text="Skills" />
+                <NavItem href="certificates" text="Certificates" />
+                <NavItem href="projects" text="Projects" />
+                <NavItem href="contact" text="Contacts" />
               </nav>
             </SheetContent>
           </Sheet>

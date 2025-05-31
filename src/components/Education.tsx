@@ -4,49 +4,10 @@ import { GraduationCap, Download } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import {educations} from '@/constants'
 
 export default function Education() {
-  const educationData = [
-    {
-      title: 'BSc (Hons) Computer Science - Software Engineering',
-      institution: 'Kington University',
-      logo: '/Kingston.webp',
-      duration: '2025 – Present',
-      description: 'Specializing in Software Engineering, Web Technologies, and AI Integration.',
-    },
-    {
-      title: 'Higher National Diploma in Computing',
-      institution: 'Metropolitan University',
-      logo: '/Metropolitan.png',
-      duration: '2023 – 2024',
-      description: 'Completed Level 5 HND in Computing with focus on application development.',
-      certificate: '/certificates/HND.pdf',
-    },
-    {
-      title: 'Diploma in IT',
-      institution: 'Metropolitan University',
-      logo: '/Metropolitan.png',
-      duration: '2023 – 2024',
-      description: 'Completed a comprehensive foundation program in Information Technology.',
-      certificate: '/certificates/diploma-it.pdf',
-    },
-    {
-      title: 'Diploma in English',
-      institution: 'Metropolitan College',
-      logo: '/Metropolitan.png',
-      duration: '2023 – 2024',
-      description: 'Enhanced professional communication skills in academic and business contexts.',
-      certificate: '/certificates/diploma-english.pdf',
-    },
-    {
-      title: 'G.C.E A/L – Arts Stream',
-      institution: 'Assiraj Muslim Maha Vidyalaya',
-      logo: '/logos/assiraj.png',
-      duration: '2020 – 2023',
-      description: 'Studied Political Science, Geography, and Islamic Civilization.',
-      certificate: '/certificates/al.pdf',
-    },
-  ]
+ 
 
   // Animation variants for timeline items
   const itemVariants = {
@@ -60,7 +21,7 @@ export default function Education() {
         <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">Education Timeline</h2>
 
         <div className="relative border-l border-blue-500 ml-6">
-          {educationData.map((item, idx) => (
+          {educations.map((item, idx) => (
             <motion.div
               key={idx}
               className="mb-10 ml-6 relative"

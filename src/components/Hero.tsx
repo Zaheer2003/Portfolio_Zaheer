@@ -9,8 +9,10 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
 
-      {/* Background Grid Pattern with enhanced white color */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle,_rgba(255,255,255,0.15)_1px,_transparent_1px)] [background-size:30px_30px]"></div>
+
+      {/* Background Grid Box Pattern */}
+<div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:30px_30px]"></div>
+
 
       {/* Animated Tech Stack Icons Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">

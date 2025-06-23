@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import { ArrowDownToLine, Mail } from 'lucide-react'
 import Typewriter from 'typewriter-effect'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -29,7 +30,7 @@ export default function Hero() {
             key={i}
             className={`absolute ${icon.style} w-10 h-10 opacity-10 animate-floating`}
           >
-            <img src={icon.src} alt="Tech Icon" className="w-full h-full object-contain" />
+            <Image src={icon.src} alt="Tech Icon" className="w-full h-full object-contain" />
           </div>
         ))}
       </div>
@@ -58,7 +59,6 @@ export default function Hero() {
               loop: true,
               delay: 60,
               deleteSpeed: 30,
-              pauseFor: 1500,
             }}
           />
         </div>

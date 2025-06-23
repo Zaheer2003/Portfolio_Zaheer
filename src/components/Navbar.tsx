@@ -13,9 +13,10 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" className="text-3xl tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text flex items-center">
             <span>&gt;_ Mohamed Zaheer</span>
-            <BlinkingCursor />
+          <BlinkingCursor />
           </Link>
         </div>
+
 
         {/* Center - Nav Items */}
         <nav className="hidden md:flex space-x-6 items-center text-lg">
@@ -74,5 +75,6 @@ function NavItem({ href, text }: { href: string; text: string }) {
 }
 
 function BlinkingCursor() {
-  return <span className="ml-1 w-3 h-6 bg-white animate-blink" />
+  return <span className="text-white animate-blink ml-1 text-3xl font-normal leading-none">_</span>
 }
+

@@ -30,7 +30,7 @@ export default function Hero() {
             key={i}
             className={`absolute ${icon.style} w-10 h-10 opacity-10 animate-floating`}
           >
-            <Image src={icon.src} alt="Tech Icon" fill className="object-contain" />
+            <Image src={icon.src} alt="Tech Icon" className="w-full h-full object-contain" />
           </div>
         ))}
       </div>

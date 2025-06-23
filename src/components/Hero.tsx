@@ -1,12 +1,14 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from './ui/button'
 import { ArrowDownToLine, Mail } from 'lucide-react'
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
+
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle,_rgba(255,255,255,0.05)_1px,_transparent_1px)] [background-size:30px_30px]"></div>
 
       {/* Animated Tech Stack Icons Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -26,7 +28,9 @@ export default function Hero() {
             key={i}
             className={`absolute ${icon.style} w-10 h-10 opacity-10 animate-floating`}
           >
-            <Image src={icon.src} alt="Tech Icon" fill className="object-contain" />
+            {/* Reintroduce this line only if you're importing Image from 'next/image' */}
+            {/* <Image src={icon.src} alt="Tech Icon" fill className="object-contain" /> */}
+            <img src={icon.src} alt="Tech Icon" className="w-full h-full object-contain" />
           </div>
         ))}
       </div>
@@ -36,16 +40,6 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="text-center max-w-3xl space-y-8 z-10">
-        {/* Profile Image */}
-        <div className="flex justify-center">
-          <Image
-            src="/my-pic.jpg"
-            alt="Mohamed Zaheer"
-            width={220}
-            height={220}
-            className="rounded-full border-4 border-white shadow-xl"
-          />
-        </div>
 
         {/* Name Heading */}
         <h1 className="text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">

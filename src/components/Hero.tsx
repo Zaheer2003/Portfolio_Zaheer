@@ -49,7 +49,8 @@ export default function Hero() {
         </h1>
 
         {/* Animated Role Subtitle */}
-        <div className="text-lg md:text-2xl font-medium text-white/90 h-10">
+        <div className="text-lg md:text-2xl font-medium text-white/90 flex justify-center gap-2 h-10">
+          <span className="text-gray-400">I'm a</span>
           <Typewriter
             options={{
               strings: [

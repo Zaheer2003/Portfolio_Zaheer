@@ -28,9 +28,9 @@ export default function Navbar() {
 
         {/* Right - Donate Button */}
         <div className="hidden md:block">
-          <Link href="#donate">
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
-              Donate
+          <Link href="#services">
+            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white cursor-pointer">
+              Services
             </Button>
           </Link>
         </div>

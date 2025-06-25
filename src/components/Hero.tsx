@@ -5,7 +5,6 @@ import { Button } from './ui/button'
 import { ArrowDownToLine, Mail } from 'lucide-react'
 import Typewriter from 'typewriter-effect'
 
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
@@ -18,6 +17,11 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="text-center max-w-3xl space-y-6 z-10">
+
+        {/* Motivational Quote */}
+        <p className="text-lg md:text-xl italic text-white/70">
+          --- <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text font-semibold">Design with purpose. Develop with passion.</span> ---
+        </p>
 
         {/* Name Heading */}
         <h1 className="text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
@@ -67,12 +71,6 @@ export default function Hero() {
           </Link>
         </div>
 
-        {/* Display "use client" Large */}
-        <div className="mt-12">
-          <p className="text-3xl md:text-5xl font-bold text-white/20 uppercase tracking-wider">
-            use client
-          </p>
-        </div>
       </div>
     </section>
   )

@@ -51,7 +51,7 @@ export default function Navbar() {
                 <NavItem href="#contact" text="Contact" />
                 <Link href="#donate">
                   <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 mt-4">
-                    Donate
+                    Services
                   </Button>
                 </Link>
               </nav>

@@ -1,41 +1,17 @@
 'use client'
+
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { ArrowDownToLine, Mail } from 'lucide-react'
 import Typewriter from 'typewriter-effect'
-import Image from 'next/image'
+
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
 
-
       {/* Background Grid Box Pattern */}
-<div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:30px_30px]"></div>
-
-
-      {/* Animated Tech Stack Icons Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {[
-          { src: '/html.svg', style: 'top-[10%] left-[15%]' },
-          { src: '/css.svg', style: 'top-[25%] left-[70%]' },
-          { src: '/javascript.svg', style: 'bottom-[20%] right-[20%]' },
-          { src: '/react.svg', style: 'bottom-[10%] left-[10%]' },
-          { src: '/nextjs.svg', style: 'top-[40%] right-[10%]' },
-          { src: '/laravel.svg', style: 'bottom-[30%] left-[40%]' },
-          { src: '/Postgre.png', style: 'top-[15%] right-[30%]' },
-          { src: '/vercel.svg', style: 'bottom-[5%] right-[5%]' },
-          { src: '/tailwindcss.svg', style: 'top-[5%] left-[5%]' },
-          { src: '/typescript.svg', style: 'top-[45%] left-[55%]' },
-        ].map((icon, i) => (
-          <div
-            key={i}
-            className={`absolute ${icon.style} w-10 h-10 opacity-10 animate-floating`}
-          >
-            <Image src={icon.src} alt="Tech Icon" className="w-full h-full object-contain" />
-          </div>
-        ))}
-      </div>
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:60px_60px]"></div>
 
       {/* Decorative Blur */}
       <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] bg-purple-500/20 rounded-full blur-3xl animate-pulse z-0"></div>
@@ -89,6 +65,13 @@ export default function Hero() {
               Contact Me <Mail className="ml-2 w-4 h-4" />
             </Button>
           </Link>
+        </div>
+
+        {/* Display "use client" Large */}
+        <div className="mt-12">
+          <p className="text-3xl md:text-5xl font-bold text-white/20 uppercase tracking-wider">
+            use client
+          </p>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className='bg-[#01003D] text-white font-audiowide border-t border-white/10 mt-10'>
+    <footer className='bg-[#01003D] text-white font-audiowide border-t border-white/10'>
         <div className='container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8'>
             <div>
                 <h2 className='text-2xl mb-3'>Mohamed Zaheer</h2>

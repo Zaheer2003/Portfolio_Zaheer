@@ -8,45 +8,44 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
 
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:60px_60px]"></div>
 
-      {/* Wave Animation */}
-      <div className="absolute bottom-0 left-0 w-full h-48 overflow-hidden z-0">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="w-full h-full">
-          <path d="M0.00,49.98 C150.00,150.00 349.73,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" fill="#000033" opacity="0.2">
-            <animate attributeName="d" dur="10s" repeatCount="indefinite"
-              values="
-                M0.00,49.98 C150.00,150.00 349.73,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z;
-                M0.00,69.98 C200.00,130.00 300.00,-30.00 500.00,69.98 L500.00,150.00 L0.00,150.00 Z;
-                M0.00,49.98 C150.00,150.00 349.73,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z
-              "
-            />
-          </path>
-        </svg>
-      </div>
+      {/* Main Content */}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8 flex-grow">
 
-      {/* Hero Content with Cards on Sides */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8">
-
-        {/* Left Cards (Desktop only with animation) */}
+        {/* Left Cards (Animated Wave, Desktop Only) */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
           className="hidden md:flex flex-col gap-6"
         >
-          <div className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform">
-            <Layers className="text-purple-400 w-8 h-8 mb-2" />
-            <span className="text-white/90">Solutions</span>
-          </div>
-          <div className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform">
-            <Lightbulb className="text-purple-400 w-8 h-8 mb-2" />
-            <span className="text-white/90">Innovation</span>
-          </div>
+          {[
+            { icon: <Layers className="text-purple-400 w-8 h-8 mb-2" />, label: 'Solutions', y: 20 },
+            { icon: <Lightbulb className="text-purple-400 w-8 h-8 mb-2" />, label: 'Innovation', y: 0 },
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: card.y + 20 }}
+              whileInView={{ opacity: 1, y: card.y }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform"
+            >
+              {card.icon}
+              <span className="text-white/90">{card.label}</span>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Center Hero */}
@@ -100,22 +99,36 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Cards (Desktop only with animation) */}
+        {/* Right Cards (Animated Wave, Desktop Only) */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
           className="hidden md:flex flex-col gap-6"
         >
-          <div className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform">
-            <Code2 className="text-purple-400 w-8 h-8 mb-2" />
-            <span className="text-white/90">Development</span>
-          </div>
-          <div className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform">
-            <PenTool className="text-blue-400 w-8 h-8 mb-2" />
-            <span className="text-white/90">Design</span>
-          </div>
+          {[
+            { icon: <Code2 className="text-purple-400 w-8 h-8 mb-2" />, label: 'Development', y: 0 },
+            { icon: <PenTool className="text-blue-400 w-8 h-8 mb-2" />, label: 'Design', y: 20 },
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: card.y + 20 }}
+              whileInView={{ opacity: 1, y: card.y }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform"
+            >
+              {card.icon}
+              <span className="text-white/90">{card.label}</span>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

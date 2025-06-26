@@ -5,15 +5,22 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import {educations} from '@/constants'
-
+import { Variants } from 'framer-motion'
 export default function Education() {
  
 
   // Animation variants for timeline items
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-  }
+  const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // ✅ valid cubic-bezier (easeOut)
+    },
+  },
+}
 
   return (
     <section id="education" className="bg-[#01003D] text-white font-audiowide py-20 px-6 md:px-12">

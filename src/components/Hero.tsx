@@ -29,9 +29,9 @@ export default function Hero() {
             },
           }}
           viewport={{ once: true }}
-          className="hidden md:flex flex-col gap-6"
+          className="hidden md:flex flex-col gap-6 py-12"
         >
-          {[
+          {[ 
             { icon: <Layers className="text-purple-400 w-8 h-8" />, label: 'Solutions', y: 20 },
             { icon: <Lightbulb className="text-yellow-400 w-8 h-8" />, label: 'Innovation', y: 0 },
           ].map((card, index) => (
@@ -51,7 +51,6 @@ export default function Hero() {
             >
               {card.icon}
               <span className="text-white text-lg font-semibold">{card.label}</span>
-              <span className="text-sm text-white/60">Click to explore</span>
             </motion.div>
           ))}
         </motion.div>
@@ -120,9 +119,9 @@ export default function Hero() {
             },
           }}
           viewport={{ once: true }}
-          className="hidden md:flex flex-col gap-6"
+          className="hidden md:flex flex-col gap-6 py-12"
         >
-          {[
+          {[ 
             { icon: <Code2 className="text-green-400 w-8 h-8" />, label: 'Development', y: 0 },
             { icon: <PenTool className="text-blue-400 w-8 h-8" />, label: 'Design', y: 20 },
           ].map((card, index) => (
@@ -142,7 +141,6 @@ export default function Hero() {
             >
               {card.icon}
               <span className="text-white text-lg font-semibold">{card.label}</span>
-              <span className="text-sm text-white/60">Click to explore</span>
             </motion.div>
           ))}
         </motion.div>

@@ -21,7 +21,7 @@ export default function About() {
     tab === 'Domains' ? 'Domain' : tab.slice(0, -1)
 
   return (
-    <section className="min-h-screen px-4 py-16 md:px-8 bg-[#01003D] text-white font-audiowide">
+    <section className="min-h-screen px-4 py-16 md:px-8 bg-[#01003D] text-white font-audiowide mt-6">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-2">
@@ -49,7 +49,7 @@ export default function About() {
             {/* Download CV Button */}
             <div className="pt-2">
               <a href="/MyCV.pdf" download>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
+                <Button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
                   Download CV <ArrowDownToLine className="ml-2 w-4 h-4" />
                 </Button>
               </a>
@@ -91,7 +91,7 @@ export default function About() {
               {skills[activeTab].map((skill, idx) => (
                 <li
                   key={idx}
-                  className="flex justify-between items-center px-4 py-2 bg-white/5 rounded-md border border-white/10"
+                  className="flex justify-between items-center px-4 py-2 bg-white/5 rounded-md border border-white/10 cursor-pointer"
                 >
                   <span>{skill}</span>
                   <span className="text-xs bg-white text-[#01003D] px-2 py-0.5 rounded-md capitalize">

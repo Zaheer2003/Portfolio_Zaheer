@@ -31,28 +31,29 @@ export default function Hero() {
           viewport={{ once: true }}
           className="hidden md:flex flex-col gap-6 py-12"
         >
-          {[ 
-            { icon: <Layers className="text-purple-400 w-8 h-8" />, label: 'Solutions', y: 20 },
-            { icon: <Lightbulb className="text-yellow-400 w-8 h-8" />, label: 'Innovation', y: 0 },
-          ].map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: card.y + 40 }}
-              whileInView={{ opacity: 1, y: card.y }}
-              whileHover={{
-                scale: 1.05,
-                rotateX: -5,
-                rotateY: 5,
-                boxShadow: '0 8px 24px rgba(255, 255, 255, 0.15)',
-              }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.3 }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-2 transition-all"
-            >
-              {card.icon}
-              <span className="text-white text-lg font-semibold">{card.label}</span>
-            </motion.div>
-          ))}
+        {[
+           { icon: <Layers className="text-purple-400 w-8 h-8" />, label: 'Solutions', y: 0 },
+          { icon: <Lightbulb className="text-yellow-400 w-8 h-8" />, label: 'Innovation', y: 20 },
+].map((card, index) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: card.y + 40 }}
+    whileInView={{ opacity: 1, y: card.y }}
+    whileHover={{
+      scale: 1.05,
+      rotateX: -5,
+      rotateY: 5,
+      boxShadow: '0 8px 24px rgba(255, 255, 255, 0.15)',
+    }}
+    whileTap={{ scale: 0.98 }}
+    transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.3 }}
+    className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-2 transition-all h-[130px]"
+  >
+    {card.icon}
+    <span className="text-white text-lg font-semibold">{card.label}</span>
+  </motion.div>
+))}
+
         </motion.div>
 
         {/* Center Hero */}

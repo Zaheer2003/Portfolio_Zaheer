@@ -27,6 +27,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-6 text-lg">
           <NavItem href="/" text="Home" active={pathname === '/'} />
           <NavItem href="/about" text="About" active={pathname === '/about'} />
+          <NavItem href="/projects" text="Projects" active={pathname === '/projects'} />
           <NavItem href="/timeline" text="Timeline" active={pathname === '/timeline'} />
           <NavItem href="/contact" text="Contact" active={pathname === '/contact'} />
         </nav>
@@ -52,6 +53,7 @@ export default function Navbar() {
               <nav className="flex flex-col gap-6 text-lg font-medium">
                 <NavItem href="/" text="Home" active={pathname === '/'} />
                 <NavItem href="/about" text="About" active={pathname === '/about'} />
+                <NavItem href="/projects" text="Projects" active={pathname === '/projects'} />
                 <NavItem href="/timeline" text="Timeline" active={pathname === '/timeline'} />
                 <NavItem href="/contact" text="Contact" active={pathname === '/contact'} />
                 <Link href="/services">

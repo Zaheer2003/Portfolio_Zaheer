@@ -9,7 +9,7 @@ type SkillCategory = 'Languages' | 'Frameworks' | 'Domains' | 'Tools'
 
 const skills: Record<SkillCategory, string[]> = {
   Languages: ['Java', 'Python', 'JavaScript/TypeScript', 'C/C++', 'Rust'],
-  Frameworks: ['React', 'Next.js', 'Node.js', 'Tailwind CSS'],
+  Frameworks: ['React', 'Next.js', 'Laravel', 'Tailwind CSS'],
   Domains: ['Web Development', 'AI/ML', 'UI/UX', 'Cloud'],
   Tools: ['Git', 'Postman', 'Figma', 'VS Code']
 }

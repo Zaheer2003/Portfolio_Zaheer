@@ -75,7 +75,7 @@ export default function About() {
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}
-                  className={`px-4 py-1 rounded-md text-sm border transition ${
+                  className={`px-4 py-1 cursor-pointer rounded-md text-sm border transition ${
                     activeTab === category
                       ? 'bg-white text-[#01003D]'
                       : 'border-white/20 text-white/60 hover:text-white'
@@ -91,7 +91,7 @@ export default function About() {
               {skills[activeTab].map((skill, idx) => (
                 <li
                   key={idx}
-                  className="flex justify-between items-center px-4 py-2 bg-white/5 rounded-md border border-white/10 cursor-pointer"
+                  className="flex justify-between items-center px-4 py-2 bg-white/5 rounded-md border border-white/10"
                 >
                   <span>{skill}</span>
                   <span className="text-xs bg-white text-[#01003D] px-2 py-0.5 rounded-md capitalize">

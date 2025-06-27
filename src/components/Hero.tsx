@@ -16,7 +16,7 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8 flex-grow">
 
-        {/* Left Cards (Animated Wave, Desktop Only) */}
+        {/* Left Cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -32,18 +32,26 @@ export default function Hero() {
           className="hidden md:flex flex-col gap-6"
         >
           {[
-            { icon: <Layers className="text-purple-400 w-8 h-8 mb-2" />, label: 'Solutions', y: 20 },
-            { icon: <Lightbulb className="text-purple-400 w-8 h-8 mb-2" />, label: 'Innovation', y: 0 },
+            { icon: <Layers className="text-purple-400 w-8 h-8" />, label: 'Solutions', y: 20 },
+            { icon: <Lightbulb className="text-yellow-400 w-8 h-8" />, label: 'Innovation', y: 0 },
           ].map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: card.y + 20 }}
+              initial={{ opacity: 0, y: card.y + 40 }}
               whileInView={{ opacity: 1, y: card.y }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform"
+              whileHover={{
+                scale: 1.05,
+                rotateX: -5,
+                rotateY: 5,
+                boxShadow: '0 8px 24px rgba(255, 255, 255, 0.15)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.3 }}
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-2 transition-all"
             >
               {card.icon}
-              <span className="text-white/90">{card.label}</span>
+              <span className="text-white text-lg font-semibold">{card.label}</span>
+              <span className="text-sm text-white/60">Click to explore</span>
             </motion.div>
           ))}
         </motion.div>
@@ -83,7 +91,7 @@ export default function Hero() {
             <a href="/MyCV.pdf" download className="cursor-pointer">
               <Button
                 variant="default"
-                className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 cursor-pointer"
+                className="text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
               >
                 Download CV <ArrowDownToLine className="ml-2 w-4 h-4" />
               </Button>
@@ -91,7 +99,7 @@ export default function Hero() {
             <Link href="#contact" className="cursor-pointer">
               <Button
                 variant="default"
-                className="border-white text-white hover:bg-white hover:text-[#01003D] transition-all duration-300 cursor-pointer"
+                className="border border-white text-white hover:bg-white hover:text-[#01003D] transition-all duration-300"
               >
                 Contact Me <Mail className="ml-2 w-4 h-4" />
               </Button>
@@ -99,7 +107,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Cards (Animated Wave, Desktop Only) */}
+        {/* Right Cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -115,18 +123,26 @@ export default function Hero() {
           className="hidden md:flex flex-col gap-6"
         >
           {[
-            { icon: <Code2 className="text-purple-400 w-8 h-8 mb-2" />, label: 'Development', y: 0 },
-            { icon: <PenTool className="text-blue-400 w-8 h-8 mb-2" />, label: 'Design', y: 20 },
+            { icon: <Code2 className="text-green-400 w-8 h-8" />, label: 'Development', y: 0 },
+            { icon: <PenTool className="text-blue-400 w-8 h-8" />, label: 'Design', y: 20 },
           ].map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: card.y + 20 }}
+              initial={{ opacity: 0, y: card.y + 40 }}
               whileInView={{ opacity: 1, y: card.y }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-black/30 rounded-xl p-4 flex flex-col items-center hover:scale-105 transition-transform"
+              whileHover={{
+                scale: 1.05,
+                rotateX: -5,
+                rotateY: 5,
+                boxShadow: '0 8px 24px rgba(255, 255, 255, 0.15)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.3 }}
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-2 transition-all"
             >
               {card.icon}
-              <span className="text-white/90">{card.label}</span>
+              <span className="text-white text-lg font-semibold">{card.label}</span>
+              <span className="text-sm text-white/60">Click to explore</span>
             </motion.div>
           ))}
         </motion.div>

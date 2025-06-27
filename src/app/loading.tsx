@@ -1,4 +1,4 @@
-// app/loading.tsx
+"use client"
 
 import IronmanHeartSpinner from "@/components/IronSpinner";
 

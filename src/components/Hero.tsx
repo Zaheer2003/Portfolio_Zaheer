@@ -5,13 +5,13 @@ import { Button } from './ui/button'
 import { ArrowDownToLine, Mail, Lightbulb, Layers, Code2, PenTool } from 'lucide-react'
 import Typewriter from 'typewriter-effect'
 import { motion } from 'framer-motion'
-import IronmanHeartSpinner from "./IronSpinner"
+
 
 export default function Hero() {
   return (
     
     <section className="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#01003D] to-[#000033] text-white font-audiowide px-4 overflow-hidden">
-      <IronmanHeartSpinner />
+
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:60px_60px]"></div>
 

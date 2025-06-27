@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Audiowide } from 'next/font/google'
 import Footer from "@/components/Footer";
+import { Audiowide } from 'next/font/google';
 
 const audiowide = Audiowide({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-})
+});
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Navbar/>
       <body className={`${audiowide.className} bg-[#01003D] text-white`}>
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
-      <Footer/>
     </html>
   );
 }

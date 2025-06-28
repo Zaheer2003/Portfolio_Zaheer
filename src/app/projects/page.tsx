@@ -65,11 +65,15 @@ const cardVariants: Variants = {
 
 export default function Projects() {
   return (
-    <section className="min-h-screen bg-[#01003D] text-[#01003D] font-audiowide py-16 px-6">
+    <section className="min-h-screen bg-[#01003D] font-audiowide py-16 px-6 text-[#01003D]">
       <div className="max-w-6xl mx-auto space-y-12">
         <h2 className="text-4xl font-bold text-center mb-8 text-white">Projects</h2>
 
-        <div className="flex flex-col gap-8">
+        {/* Horizontal scroll container */}
+        <div
+          className="flex overflow-x-auto gap-8 px-4 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-300 snap-x"
+          style={{ scrollSnapType: 'x mandatory' }}
+        >
           {projects.map(
             (
               {
@@ -91,44 +95,43 @@ export default function Projects() {
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
+                style={{ backgroundColor: cardColor, scrollSnapAlign: 'start' }}
+                className="min-w-[300px] max-w-xs rounded-2xl border-4 border-[#1e1e1e] p-6 cursor-pointer flex-shrink-0 hover:shadow-lg transition-shadow duration-300"
               >
                 <Link
                   href={liveUrl ?? githubUrl ?? '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ backgroundColor: cardColor }}
-                  className="flex items-center rounded-2xl border-4 border-[#1e1e1e] p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                  className="flex flex-col items-center"
                 >
                   {/* Logo / Icon Box */}
                   <div
-                    className="w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 mr-6 select-none"
+                    className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 select-none"
                     style={{ backgroundColor: logoBgColor }}
                   >
                     <FaProjectDiagram size={32} color={logoColor} />
                   </div>
 
                   {/* Text Content */}
-                  <div>
-                    <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-                    <p className="text-sm mb-4 max-w-lg">{description}</p>
+                  <h3 className="text-2xl font-semibold mb-2 text-center">{title}</h3>
+                  <p className="text-sm mb-4 max-w-xs text-center">{description}</p>
 
-                    <div className="flex gap-4 text-xs font-medium max-w-lg">
-                      <div
-                        className="flex-1 rounded-md py-1 text-center"
-                        style={{ backgroundColor: logoBgColor, color: logoColor }}
-                      >
-                        Language
-                        <div className="mt-1">{language}</div>
-                      </div>
-                      <div
-                        className="flex-1 rounded-md py-1 text-center"
-                        style={{ backgroundColor: logoBgColor, color: logoColor }}
-                      >
-                        Tools
-                        <div className="mt-1">{tools}</div>
-                      </div>
+                  <div className="flex gap-4 text-xs font-medium max-w-xs">
+                    <div
+                      className="flex-1 rounded-md py-1 text-center"
+                      style={{ backgroundColor: logoBgColor, color: logoColor }}
+                    >
+                      Language
+                      <div className="mt-1">{language}</div>
+                    </div>
+                    <div
+                      className="flex-1 rounded-md py-1 text-center"
+                      style={{ backgroundColor: logoBgColor, color: logoColor }}
+                    >
+                      Tools
+                      <div className="mt-1">{tools}</div>
                     </div>
                   </div>
                 </Link>

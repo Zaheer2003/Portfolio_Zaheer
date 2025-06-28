@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import MaintenanceSVG from '@/public/construction.svg' // adjust path accordingly
+import MaintenanceSVG from '@/public/construction.svg'
 import Image from 'next/image'
 
 export default function UnderMaintenance() {

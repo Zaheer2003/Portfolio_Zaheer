@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { FaProjectDiagram } from 'react-icons/fa'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 type Project = {
   id: string
@@ -54,7 +54,7 @@ const projects: Project[] = [
   },
 ]
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, x: -30 },
   visible: (i: number) => ({
     opacity: 1,

@@ -8,10 +8,10 @@ import { Button } from '@/components/ui/button' // adjust the path if needed
 type SkillCategory = 'Languages' | 'Frameworks' | 'Domains' | 'Tools'
 
 const skills: Record<SkillCategory, string[]> = {
-  Languages: ['Java', 'Python', 'JavaScript/TypeScript', 'C/C++', 'Rust'],
-  Frameworks: ['React', 'Next.js', 'Laravel', 'Tailwind CSS'],
-  Domains: ['Web Development', 'AI/ML', 'UI/UX', 'Cloud'],
-  Tools: ['Git', 'Postman', 'Figma', 'VS Code']
+  Languages: [ 'JavaScript/TypeScript', 'C#', 'PHP'],
+  Frameworks: ['React', 'Next.js', 'Laravel', 'Tailwind CSS', 'Bootstrap'],
+  Domains: ['Web Development', 'UI/UX', 'E-commerce',],
+  Tools: ['Git', 'Github', 'Postman', 'Figma', 'VS Code' ]
 }
 
 export default function About() {
@@ -27,7 +27,7 @@ export default function About() {
         <div className="text-center space-y-2">
           <h2 className="text-4xl font-bold">About Me</h2>
           <p className="text-white/70">
-            Get to know me, my skills, and my journey in the world of technology
+            Get to know me, my skills and my journey in the world of technology
           </p>
         </div>
 
@@ -39,11 +39,11 @@ export default function About() {
             <p className="text-white/80 leading-relaxed text-base">
               Im a final-year Software Engineering student with a passion for building intelligent systems
               that solve real-world problems. My journey in tech has taken me from classroom theory to
-              hands-on projects in AI, e-commerce, and user-focused software.
+              hands-on projects in e-commerce and user-focused software.
             </p>
             <p className="text-white/70 text-sm">
               I thrive at the intersection of creativity and problem-solving, with a goal of crafting modern digital
-              solutions that are scalable, accessible, and intuitive.
+              solutions that are scalable, accessible and intuitive.
             </p>
 
             {/* Download CV Button */}

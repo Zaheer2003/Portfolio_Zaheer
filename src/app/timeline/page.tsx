@@ -9,20 +9,26 @@ const filters: TimelineCategory[] = ['All Events', 'Education', 'Internship', 'F
 
 const timelineData = [
   {
-    year: '2026',
+    year: '2025 - 2026',
     title: 'Graduation',
-    description: 'Pursuing B.Tech in Computer Science and Engineering at Kingston University',
+    description: 'BSc (Hons) Computer Science (Software Engineering) from Kingston University London',
     type: 'Education',
   },
   {
-    year: '2022',
-    title: '12th Grade',
-    description: 'Completed 12th grade with a focus on Science and Mathematics',
+    year: '2023 - 2024',
+    title: 'HND in Computing',
+    description: 'Completed HND in Computing from Pearson College London',
     type: 'Education',
   },
   {
-    year: '2020',
-    title: '10th Grade',
+    year: '2023 - 2024',
+    title: 'Diploma in IT (DITEC)',
+    description: 'Completed Diploma in IT (DITEC) from Pearson College London',
+    type: 'Education',
+  },
+  {
+    year: '2023 - 2023',
+    title: 'Diploma in English',
     description: 'Completed 10th grade from I.H.S School Kerala',
     type: 'Education',
   },

@@ -57,7 +57,7 @@ export default function Navbar() {
                 <NavItem href="/timeline" text="Timeline" active={pathname === '/timeline'} />
                 <NavItem href="/contact" text="Contact" active={pathname === '/contact'} />
                 <Link href="/services">
-                  <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white mt-4">
+                  <Button className="w-full cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white mt-4">
                     Services
                   </Button>
                 </Link>

@@ -26,6 +26,18 @@ const timelineData = [
     description: 'Completed 10th grade from I.H.S School Kerala',
     type: 'Education',
   },
+  {
+    year: '2024',
+    title: 'Freelance Web Developer',
+    description: 'Built e-commerce and business websites for small clients using Laravel and Next.js',
+    type: 'Freelancer',
+  },
+  {
+    year: '2023',
+    title: 'Software Engineering Intern',
+    description: 'Interned at Nexa Tech, worked on ERP and POS system development using React and Laravel',
+    type: 'Internship',
+  },
 ]
 
 export default function TimelinePage() {

@@ -97,7 +97,7 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-3 gap-10">
           <AnimatePresence mode="wait">
-            {visibleProjects.map((project, idx) => (
+            {visibleProjects.map((project) => (
               <motion.button
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}

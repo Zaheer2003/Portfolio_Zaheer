@@ -50,11 +50,18 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {services.map(({ icon, title, description, gradient }, index) => (
-            <div
+            <button
               key={index}
+              type="button"
+              aria-label={title}
               className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
                          shadow-lg shadow-black/30
-                         transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
+                         cursor-pointer
+                         transform transition duration-300 ease-in-out
+                         hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]
+                         hover:bg-white/10
+                         active:scale-95 focus:outline-none focus:ring-4 focus:ring-indigo-500/50"
+              onClick={() => alert(`You clicked on "${title}"`)}
             >
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-tr ${gradient} shadow-lg`}
@@ -63,7 +70,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-2xl font-semibold">{title}</h3>
               <p className="text-white/70 leading-relaxed">{description}</p>
-            </div>
+            </button>
           ))}
         </div>
       </div>

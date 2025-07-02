@@ -1,34 +1,83 @@
 'use client'
 
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import { Code2, ShoppingBag, MonitorSmartphone, Database } from 'lucide-react'
 
 const services = [
   {
     icon: <Code2 className="w-7 h-7 text-white" />,
     title: 'Web Application Development',
-    description: 'Build scalable, responsive full-stack web apps using Next.js, Laravel, and Tailwind CSS.',
+    description:
+      'Build scalable, responsive full-stack web apps using Next.js, Laravel, and Tailwind CSS.',
     gradient: 'from-indigo-500 via-purple-500 to-pink-500',
+    path: '/services/web-development',
   },
   {
     icon: <ShoppingBag className="w-7 h-7 text-white" />,
     title: 'E-commerce Solutions',
-    description: 'Launch online stores with integrated payment systems, admin dashboards, and product management.',
+    description:
+      'Launch online stores with integrated payment systems, admin dashboards, and product management.',
     gradient: 'from-green-400 via-teal-400 to-cyan-500',
+    path: '/services/ecommerce',
   },
   {
     icon: <MonitorSmartphone className="w-7 h-7 text-white" />,
     title: 'UI/UX Design',
-    description: 'Design user-friendly interfaces and mobile-first layouts using Figma and modern frontend frameworks.',
+    description:
+      'Design user-friendly interfaces and mobile-first layouts using Figma and modern frontend frameworks.',
     gradient: 'from-yellow-400 via-red-400 to-pink-500',
+    path: '/services/ui-ux-design',
   },
   {
     icon: <Database className="w-7 h-7 text-white" />,
     title: 'POS & Retail Systems',
-    description: 'Retail & inventory solutions for small businesses, including barcode, invoice, and sales tracking features.',
+    description:
+      'Retail & inventory solutions for small businesses, including barcode, invoice, and sales tracking features.',
     gradient: 'from-blue-400 via-indigo-500 to-purple-600',
+    path: '/services/pos-retail',
   },
 ]
+
+function ServiceCard({
+  icon,
+  title,
+  description,
+  gradient,
+  path,
+}: {
+  icon: React.ReactNode
+  title: string
+  description: string
+  gradient: string
+  path: string
+}) {
+  const router = useRouter()
+
+  return (
+    <button
+      type="button"
+      aria-label={title}
+      onClick={() => router.push(path)}
+      className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
+                 shadow-lg shadow-black/30
+                 cursor-pointer
+                 transform transition duration-300 ease-in-out
+                 hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]
+                 hover:bg-white/10
+                 active:scale-95 focus:outline-none focus:ring-4 focus:ring-indigo-500/50
+                 motion-safe:animate-fadeInUp"
+    >
+      <div
+        className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-tr ${gradient} shadow-lg shadow-black/50`}
+      >
+        {icon}
+      </div>
+      <h3 className="text-2xl font-semibold">{title}</h3>
+      <p className="text-white/70 leading-relaxed">{description}</p>
+    </button>
+  )
+}
 
 export default function ServicesPage() {
   return (
@@ -49,31 +98,37 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {services.map(({ icon, title, description, gradient }, index) => (
-            <button
+          {services.map(({ icon, title, description, gradient, path }, index) => (
+            <ServiceCard
               key={index}
-              type="button"
-              aria-label={title}
-              className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
-                         shadow-lg shadow-black/30
-                         cursor-pointer
-                         transform transition duration-300 ease-in-out
-                         hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]
-                         hover:bg-white/10
-                         active:scale-95 focus:outline-none focus:ring-4 focus:ring-indigo-500/50"
-              onClick={() => alert(`You clicked on "${title}"`)}
-            >
-              <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-tr ${gradient} shadow-lg`}
-              >
-                {icon}
-              </div>
-              <h3 className="text-2xl font-semibold">{title}</h3>
-              <p className="text-white/70 leading-relaxed">{description}</p>
-            </button>
+              icon={icon}
+              title={title}
+              description={description}
+              gradient={gradient}
+              path={path}
+            />
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation-name: fadeInUp;
+          animation-fill-mode: both;
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-duration: 0.6s;
+        }
+      `}</style>
     </section>
   )
 }

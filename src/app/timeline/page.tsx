@@ -11,7 +11,7 @@ const timelineData = [
   {
     year: '2026',
     title: 'Graduation',
-    description: 'Pursuing B.Tech in Computer Science and Engineering at RIT College',
+    description: 'Pursuing B.Tech in Computer Science and Engineering at Kingston University',
     type: 'Education',
   },
   {

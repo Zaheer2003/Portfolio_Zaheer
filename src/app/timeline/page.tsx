@@ -29,7 +29,7 @@ const timelineData = [
   {
     year: '2023 - 2023',
     title: 'Diploma in English',
-    description: 'Completed 10th grade from I.H.S School Kerala',
+    description: 'Completed Diploma in English from Pearson College London',
     type: 'Education',
   },
   {

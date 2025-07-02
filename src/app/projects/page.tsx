@@ -10,7 +10,7 @@ const projects = [
     description:
       'A scalable platform for organizing and managing events with real-time booking.',
     icon: <CalendarDays size={40} />,
-    tags: ['Next.js', 'Laravel', 'PostgreSQL', 'Tailwindcss', 'Postman'],
+    tags: ['Next.js', 'Laravel', 'PostgreSQL', 'Tailwindcss', 'Postman', 'Shadcn UI', '+5'],
     color: 'bg-cyan-500',
   },
   {

@@ -37,7 +37,10 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500">Services</span>
+            Our{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500">
+              Services
+            </span>
           </h2>
           <p className="text-white/75 text-lg sm:text-xl">
             Discover the digital solutions we provide for businesses and startups
@@ -51,9 +54,7 @@ export default function ServicesPage() {
               key={index}
               className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
                          shadow-lg shadow-black/30
-                         transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.5)]
-                         animate-fadeInUp"
-              style={{ animationDelay: `${index * 0.15}s` }}
+                         transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.5)]"
             >
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-tr ${gradient} shadow-lg`}
@@ -66,25 +67,6 @@ export default function ServicesPage() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeInUp {
-          animation-name: fadeInUp;
-          animation-fill-mode: both;
-          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          animation-duration: 0.6s;
-        }
-      `}</style>
     </section>
   )
 }

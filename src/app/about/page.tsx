@@ -5,13 +5,14 @@ import { Github, Linkedin, Instagram, Mail, ArrowDownToLine } from 'lucide-react
 import Link from 'next/link'
 import { Button } from '@/components/ui/button' // adjust the path if needed
 
-type SkillCategory = 'Languages' | 'Frameworks' | 'Domains' | 'Tools'
+type SkillCategory = 'Languages' | 'Frameworks' | 'Domains' | 'Tools' | 'Databases'
 
 const skills: Record<SkillCategory, string[]> = {
   Languages: [ 'JavaScript/TypeScript', 'C#', 'PHP'],
   Frameworks: ['React', 'Next.js', 'Laravel', 'Tailwind CSS', 'Bootstrap'],
   Domains: ['Web Development', 'UI/UX', 'E-commerce',],
-  Tools: ['Git', 'Github', 'Postman', 'Figma', 'VS Code' ]
+  Tools: ['Git', 'Github', 'Postman', 'Figma', 'VS Code' ],
+  Databases: ['MySQL', 'PostgreSQL', 'MongoDB']
 }
 
 export default function About() {

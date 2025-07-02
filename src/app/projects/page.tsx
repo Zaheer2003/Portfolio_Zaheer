@@ -1,10 +1,9 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import { CalendarDays, BookOpen, MessageCircle } from 'lucide-react'
 
-// Map your projects to icons/colors (for demo I assigned icons/colors by index)
 const projects = [
   {
     title: 'Retail Management System',
@@ -69,8 +68,17 @@ The system automates salary calculation and handles essential payroll operations
   },
 ]
 
+const ITEMS_PER_PAGE = 3
+
 export default function Projects() {
   const router = useRouter()
+  const [currentPage, setCurrentPage] = useState(0)
+
+  // Calculate visible projects
+  const startIndex = currentPage * ITEMS_PER_PAGE
+  const visibleProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE)
 
   return (
     <section className="min-h-screen px-6 py-20 md:px-12 bg-[#01003D] text-white font-audiowide mt-6">
@@ -83,7 +91,7 @@ export default function Projects() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-10">
-          {projects.map((project, idx) => (
+          {visibleProjects.map((project, idx) => (
             <button
               key={idx}
               onClick={() => router.push(project.url)}
@@ -97,7 +105,6 @@ export default function Projects() {
               type="button"
             >
               <div>
-                {/* Category and Featured badges */}
                 <div className="flex justify-between items-center mb-4">
                   <span className="bg-white/25 text-white text-xs px-3 py-1 rounded-full font-semibold">
                     {project.category}
@@ -107,24 +114,19 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Icon */}
                 <div className="flex justify-center items-center mb-6 text-white">
                   {project.icon}
                 </div>
 
-                {/* Title */}
                 <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
 
-                {/* Timeline */}
                 <p className="text-white/80 text-xs italic mb-4">{project.timeline}</p>
 
-                {/* Description */}
                 <p className="text-white/90 text-sm whitespace-pre-line leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
-              {/* View button */}
               <div className="mt-6 flex justify-end">
                 <span
                   className="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full cursor-pointer hover:bg-white/40 transition"
@@ -140,14 +142,16 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Pagination Dots (static for now) */}
+        {/* Pagination Dots */}
         <div className="flex justify-center mt-16 gap-3">
-          {[...Array(6)].map((_, i) => (
-            <span
+          {[...Array(totalPages)].map((_, i) => (
+            <button
               key={i}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                i === 0 ? 'bg-white' : 'bg-white/40'
+              aria-label={`Go to page ${i + 1}`}
+              className={`w-4 h-4 rounded-full transition-colors focus:outline-none ${
+                i === currentPage ? 'bg-white' : 'bg-white/40'
               }`}
+              onClick={() => setCurrentPage(i)}
             />
           ))}
         </div>

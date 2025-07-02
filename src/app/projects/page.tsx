@@ -5,12 +5,12 @@ import React from 'react'
 
 const projects = [
   {
-    title: 'EventSphere',
+    title: 'Retail Management System',
     category: 'Web App',
     description:
       'A scalable platform for organizing and managing events with real-time booking.',
     icon: <CalendarDays size={40} />,
-    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', '+2'],
+    tags: ['Next.js', 'Laravel', 'PostgreSQL', 'Tailwindcss', 'Postman'],
     color: 'bg-cyan-500',
   },
   {

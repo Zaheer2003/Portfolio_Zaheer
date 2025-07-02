@@ -1,149 +1,104 @@
 'use client'
 
+import { CalendarDays, BookOpen, MessageCircle } from 'lucide-react'
 import React from 'react'
-import Link from 'next/link'
-import { FaProjectDiagram } from 'react-icons/fa'
-import { motion, Variants } from 'framer-motion'
 
-type Project = {
-  id: string
-  title: string
-  description: string
-  language: string
-  tools: string
-  githubUrl?: string
-  liveUrl?: string
-  cardColor: string
-  logoBgColor: string
-  logoColor: string
-}
-
-const projects: Project[] = [
+const projects = [
   {
-    id: '1',
-    title: 'Project One',
-    description: 'Description of project one goes here.',
-    language: 'JavaScript',
-    tools: 'React, Tailwind CSS',
-    githubUrl: 'https://github.com/Zaheer2003/project-one',
-    liveUrl: 'https://projectone.example.com',
-    cardColor: '#fef3c7',
-    logoBgColor: '#fde68a',
-    logoColor: '#92400e',
+    title: 'Retail Management System',
+    category: 'Web App',
+    description:
+      'A scalable platform for organizing and managing events with real-time booking.',
+    icon: <CalendarDays size={40} />,
+    tags: ['Next.js', 'Laravel', 'PostgreSQL', 'Tailwindcss', 'Postman', 'Shadcn UI', '+5'],
+    color: 'bg-cyan-500',
   },
   {
-    id: '2',
-    title: 'Project Two',
-    description: 'Description of project two goes here.',
-    language: 'Python',
-    tools: 'Django, PostgreSQL',
-    githubUrl: 'https://github.com/Zaheer2003/project-two',
-    cardColor: '#dbeafe',
-    logoBgColor: '#bfdbfe',
-    logoColor: '#1e40af',
+    title: 'RIT Nexus',
+    category: 'Blog Platform',
+    description:
+      'A community-driven blog platform for RIT students to share ideas, experiences, and updates.',
+    icon: <BookOpen size={40} />,
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', '+2'],
+    color: 'bg-yellow-500',
   },
   {
-    id: '3',
-    title: 'Project Three',
-    description: 'Another project description.',
-    language: 'Java',
-    tools: 'Spring, MySQL',
-    cardColor: '#ecfdf5',
-    logoBgColor: '#86efac',
-    logoColor: '#166534',
+    title: 'Vyapari AI',
+    category: 'AI/Automation',
+    description:
+      'AI-powered business assistant to automate customer queries and streamline retail communication.',
+    icon: <MessageCircle size={40} />,
+    tags: ['Python', 'FastAPI', 'Ollama Mistral 7B', 'SQLite', '+1'],
+    color: 'bg-green-500',
   },
 ]
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.2, type: 'spring', stiffness: 100 },
-  }),
-}
-
 export default function Projects() {
   return (
-    <section className="min-h-screen bg-[#01003D] font-audiowide py-16 px-6 text-[#01003D]">
-      <div className="max-w-6xl mx-auto space-y-12">
-        <h2 className="text-4xl font-bold text-center mb-8 text-white">Projects</h2>
+    <section className="min-h-screen px-6 py-16 bg-[#0A0A23] text-white font-sans">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold">Projects</h2>
+          <p className="text-white/70 mt-2">
+            Explore my portfolio of innovative projects across various domains.
+          </p>
+        </div>
 
-        {/* Horizontal scroll container with side padding */}
-        <div
-          className="flex overflow-x-auto gap-8 px-[10vw] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-300 snap-x"
-          style={{ scrollSnapType: 'x mandatory' }}
-        >
-          {projects.map(
-            (
-              {
-                id,
-                title,
-                description,
-                language,
-                tools,
-                githubUrl,
-                liveUrl,
-                cardColor,
-                logoBgColor,
-                logoColor,
-              },
-              index
-            ) => {
-              // Width styles for cards based on index
-              // 1st and 3rd cards 80% width, 2nd card 100% width
-              const widthPercent = index === 1 ? '100%' : '80%'
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className={`rounded-xl p-6 text-center text-black shadow-lg ${project.color}`}
+              style={{
+                backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 5px)',
+              }}
+            >
+              {/* Category Badge */}
+              <div className="flex justify-between items-center mb-4">
+                <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
+                  {project.category}
+                </span>
+                <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
+                  + Featured
+                </span>
+              </div>
 
-              return (
-                <motion.div
-                  key={id}
-                  custom={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={cardVariants}
-                  style={{ backgroundColor: cardColor, scrollSnapAlign: 'center', width: widthPercent }}
-                  className="rounded-2xl border-4 border-[#1e1e1e] p-6 cursor-pointer flex-shrink-0 hover:shadow-lg transition-shadow duration-300"
-                >
-                  <Link
-                    href={liveUrl ?? githubUrl ?? '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center"
+              {/* Icon */}
+              <div className="flex justify-center items-center mb-4 text-white">
+                {project.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+
+              {/* Description */}
+              <p className="text-white/90 mt-2 text-sm">{project.description}</p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap justify-center gap-2 mt-6">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-white/10 text-white text-xs px-3 py-1 rounded-full"
                   >
-                    {/* Logo / Icon Box */}
-                    <div
-                      className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 select-none"
-                      style={{ backgroundColor: logoBgColor }}
-                    >
-                      <FaProjectDiagram size={32} color={logoColor} />
-                    </div>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-                    {/* Text Content */}
-                    <h3 className="text-2xl font-semibold mb-2 text-center">{title}</h3>
-                    <p className="text-sm mb-4 max-w-xs text-center mx-auto">{description}</p>
-
-                    <div className="flex gap-4 text-xs font-medium max-w-xs mx-auto">
-                      <div
-                        className="flex-1 rounded-md py-1 text-center"
-                        style={{ backgroundColor: logoBgColor, color: logoColor }}
-                      >
-                        Language
-                        <div className="mt-1">{language}</div>
-                      </div>
-                      <div
-                        className="flex-1 rounded-md py-1 text-center"
-                        style={{ backgroundColor: logoBgColor, color: logoColor }}
-                      >
-                        Tools
-                        <div className="mt-1">{tools}</div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              )
-            }
-          )}
+        {/* Pagination Dots (static for now) */}
+        <div className="flex justify-center mt-10 gap-2">
+          {[...Array(6)].map((_, i) => (
+            <span
+              key={i}
+              className={`w-2 h-2 rounded-full ${
+                i === 0 ? 'bg-white' : 'bg-white/30'
+              }`}
+            ></span>
+          ))}
         </div>
       </div>
     </section>

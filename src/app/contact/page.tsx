@@ -19,7 +19,7 @@ export default function ContactPage() {
     <section className="min-h-screen px-6 py-20 bg-[#01003D] text-white">
       {/* Top Heading */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold">Let's Connect</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold">Lets Connect</h1>
         <p className="text-white/70 mt-4 text-lg">
           Whether you have a project in mind, want to discuss potential opportunities, or just want to say hello, Id love to hear from you.
         </p>

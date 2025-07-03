@@ -2,7 +2,14 @@
 
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { Code2, ShoppingBag, MonitorSmartphone, Database } from 'lucide-react'
+import {
+  Code2,
+  ShoppingBag,
+  MonitorSmartphone,
+  Database,
+  Briefcase,
+  ExternalLink,
+} from 'lucide-react'
 
 const services = [
   {
@@ -39,6 +46,23 @@ const services = [
   },
 ]
 
+const platforms = [
+  {
+    icon: <Briefcase className="w-7 h-7 text-white" />,
+    title: 'Hire on Fiverr',
+    description: 'View our Fiverr profile and request a custom project today.',
+    gradient: 'from-green-400 to-green-600',
+    url: 'https://www.fiverr.com/yourusername',
+  },
+  {
+    icon: <ExternalLink className="w-7 h-7 text-white" />,
+    title: 'Hire on Upwork',
+    description: 'Connect with us on Upwork for freelance and long-term projects.',
+    gradient: 'from-blue-400 to-blue-600',
+    url: 'https://www.upwork.com/freelancers/~yourprofileid',
+  },
+]
+
 function ServiceCard({
   icon,
   title,
@@ -53,19 +77,12 @@ function ServiceCard({
   path: string
 }) {
   const router = useRouter()
-
   return (
     <button
-      type="button"
-      aria-label={title}
       onClick={() => router.push(path)}
       className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
-                 shadow-lg shadow-black/30
-                 cursor-pointer
-                 transform transition duration-300 ease-in-out
-                 hover:scale-105 hover:shadow-[0_10px_25px_rgba(0,0,0,0.6)]
-                 hover:bg-white/10
-                 active:scale-95 focus:outline-none focus:ring-4 focus:ring-indigo-500/50
+                 shadow-lg shadow-black/30 cursor-pointer transform transition duration-300
+                 hover:scale-105 hover:bg-white/10 active:scale-95 focus:ring-4 focus:ring-indigo-500/50
                  motion-safe:animate-fadeInUp"
     >
       <div
@@ -79,11 +96,45 @@ function ServiceCard({
   )
 }
 
+function ExternalCard({
+  icon,
+  title,
+  description,
+  gradient,
+  url,
+}: {
+  icon: React.ReactNode
+  title: string
+  description: string
+  gradient: string
+  url: string
+}) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#0D0D2B] border border-white/10 rounded-2xl p-8 flex flex-col gap-6
+                 shadow-lg shadow-black/30 cursor-pointer transform transition duration-300
+                 hover:scale-105 hover:bg-white/10 active:scale-95 focus:ring-4 focus:ring-indigo-500/50
+                 motion-safe:animate-fadeInUp"
+    >
+      <div
+        className={`w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-tr ${gradient} shadow-lg shadow-black/50`}
+      >
+        {icon}
+      </div>
+      <h3 className="text-2xl font-semibold">{title}</h3>
+      <p className="text-white/70 leading-relaxed">{description}</p>
+    </a>
+  )
+}
+
 export default function ServicesPage() {
   return (
-    <section className="min-h-screen px-6 py-20 md:px-12 bg-[#01003D] text-white font-audiowide">
+    <section className="min-h-screen px-6 py-20 md:px-12 bg-[#01003D] text-white font-audiowide space-y-24">
+      {/* Section 1: Services */}
       <div className="max-w-7xl mx-auto space-y-16">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
             Our{' '}
@@ -95,18 +146,29 @@ export default function ServicesPage() {
             Discover the digital solutions we provide for businesses and startups
           </p>
         </div>
-
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {services.map(({ icon, title, description, gradient, path }, index) => (
-            <ServiceCard
-              key={index}
-              icon={icon}
-              title={title}
-              description={description}
-              gradient={gradient}
-              path={path}
-            />
+          {services.map((item, index) => (
+            <ServiceCard key={index} {...item} />
+          ))}
+        </div>
+      </div>
+
+      {/* Section 2: Freelance Platforms */}
+      <div className="max-w-5xl mx-auto space-y-12">
+        <div className="text-center space-y-4">
+          <h3 className="text-4xl font-bold tracking-tight">
+            Hire us on{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+              Freelance Platforms
+            </span>
+          </h3>
+          <p className="text-white/70 text-lg">
+            Prefer working through platforms? Find us on Fiverr and Upwork for trusted engagements.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          {platforms.map((item, index) => (
+            <ExternalCard key={index} {...item} />
           ))}
         </div>
       </div>
